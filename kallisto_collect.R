@@ -64,7 +64,7 @@ dds <- DESeqDataSetFromTximport(txi=txi.kallisto.tsv, sampleTable, ~Down.Syndrom
 dds <- DESeq(dds)
 
 normcounts <- counts(dds, normalized=TRUE)
-rawcounts <- counts(dds, normalized=TRUE)
+rawcounts <- counts(dds, normalized=FALSE)
 
 write.csv(normcounts,paste(outdir,"kallisto_to_DESeq_normcounts_",numberoflines,".csv", sep=""))
 write.csv(rawcounts,paste(outdir,"kallisto_to_DESeq_rawcounts_",numberoflines,".csv", sep=""))
